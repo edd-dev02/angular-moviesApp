@@ -1,0 +1,40 @@
+<div class="movie-card">
+
+  <img
+    class="poster"
+    [src]="movie.poster_path | poster"
+    [alt]="movie.title"
+  />
+
+  <div class="content">
+    <h3 class="title text-light">{{ movie.title }}</h3>
+
+    <div class="meta">
+      <span class="rating text-light">⭐ {{ movie.vote_average | number:'1.1-1' }}</span>
+      <span class="year text-light">📅 {{ movie.release_date | date:'yyyy' }}</span>
+    </div>
+
+    <p class="overview text-light">
+      {{ movie.overview | slice:0:120 }}...
+    </p>
+
+    <!--
+    <a
+      class="details-btn"
+      [routerLink]="['/movies', movie.id]"
+    >
+      Ver detalle
+    </a>
+    -->
+
+    <a
+      class="details-btn"
+      href="#"
+    >
+      Ver detalle
+    </a>
+
+  </div>
+
+</div>
+

@@ -5,6 +5,8 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MoviePageComponent } from './pages/movie-page/movie-page.component';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CardMovieComponent } from './components/card-movie/card-movie.component';
+import { PosterPipe } from './pipes/poster.pipe';
 
 
 
@@ -12,7 +14,9 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     PopularMoviesComponent,
     SearchPageComponent,
-    MoviePageComponent
+    MoviePageComponent,
+    CardMovieComponent,
+    PosterPipe
   ],
   imports: [
     CommonModule,

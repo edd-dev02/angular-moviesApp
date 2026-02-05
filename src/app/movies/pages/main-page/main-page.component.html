@@ -1,6 +1,14 @@
 <h2 class="my-2">Peliculas favoritas del momento</h2>
 <hr>
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let movie of movies">{{ movie.title }}</li>
-</ul>
+<div class="row">
+  <div
+    class="col-12 col-md-6 col-lg-4 mb-4"
+    *ngFor="let movie of movies">
+
+    <movies-card-movie
+      [InputCardMovies]="movie">
+    </movies-card-movie>
+
+  </div>
+</div>
