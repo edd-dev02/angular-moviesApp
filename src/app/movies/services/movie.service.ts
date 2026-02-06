@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { Movie, Result } from '../interfaces/movie.interface';
 import { environment } from '../../../environments/environment';
 
@@ -16,6 +16,21 @@ export class MovieService {
   public moviesList: Result[] = [];
 
   constructor(private httpClient: HttpClient) { }
+
+  public searchMovieById(movieId: number): Observable<Result | null> {
+
+    const url: string = `${this.baseUrl}/movie/${movieId}`;
+
+    return this.httpClient.get<Result>(
+      url,
+      {
+        headers: this.headers
+      })
+      .pipe(
+        catchError( () => of (null))
+      )
+
+  }
 
   public getMovies(): Observable<Result[]> {
 

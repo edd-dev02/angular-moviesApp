@@ -1,1 +1,52 @@
-<p>movie-page works!</p>
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor...
+  </div>
+</ng-template>
+
+<div *ngIf="movie; else loading" class="container mt-4">
+  <!-- Información más detallada de la película -->
+     <div class="row">
+    <!-- Poster -->
+    <div class="col-12 col-md-4 mb-3">
+      <img
+        [src]="movie!.poster_path | poster"
+        [alt]="movie!.title"
+        class="img-fluid rounded shadow"
+      />
+    </div>
+
+    <!-- Información -->
+    <div class="col-12 col-md-8">
+      <h2 class="fw-bold">{{ movie!.title }}</h2>
+      <h5 class="text-muted fst-italic">
+        {{ movie!.original_title }}
+      </h5>
+
+      <p class="mt-3">
+        ⭐ {{ movie!.vote_average | number:'1.1-1' }}
+        <span class="text-muted">
+          ({{ movie!.vote_count }} votos)
+        </span>
+      </p>
+
+      <p>
+        📅 Estreno: {{ movie!.release_date | date:'longDate' }}
+      </p>
+
+      <hr />
+
+      <p class="lead">
+        {{ movie!.overview }}
+      </p>
+
+      <div class="mt-4">
+        <button class="btn btn-outline-secondary me-2" routerLink="/movies/popular-movies">
+          ← Volver
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+</div>

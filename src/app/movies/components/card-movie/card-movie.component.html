@@ -18,21 +18,21 @@
       {{ movie.overview | slice:0:120 }}...
     </p>
 
-    <!--
     <a
       class="details-btn"
-      [routerLink]="['/movies', movie.id]"
+      [routerLink]="['/movies/by', movie.id]"
     >
       Ver detalle
     </a>
-    -->
 
+    <!--
     <a
       class="details-btn"
       href="#"
     >
       Ver detalle
     </a>
+    -->
 
   </div>
 
