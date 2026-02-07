@@ -7,6 +7,7 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
 import { PosterPipe } from './pipes/poster.pipe';
+import { SearchboxComponent } from './components/searchbox/searchbox.component';
 
 
 
@@ -16,7 +17,8 @@ import { PosterPipe } from './pipes/poster.pipe';
     SearchPageComponent,
     MoviePageComponent,
     CardMovieComponent,
-    PosterPipe
+    PosterPipe,
+    SearchboxComponent
   ],
   imports: [
     CommonModule,

@@ -55,4 +55,22 @@ export class MovieService {
 
   }
 
+  public searchMovies(movieTitle: string): Observable<Result[]> {
+    const params = new HttpParams()
+    .set("query", movieTitle)
+
+    const url: string = `${this.baseUrl}/search/movie`;
+
+    return this.httpClient.get<Movie>(
+      url,
+      {
+        params,
+        headers: this.headers
+      })
+      .pipe(
+        map(resp => resp.results)
+      )
+
+  }
+
 }

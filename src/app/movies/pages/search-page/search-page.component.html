@@ -1,1 +1,18 @@
-<p>search-page works!</p>
+<movies-searchbox (OutputSearchbox-debounce)="searchMovieTitle($event)"></movies-searchbox>
+<hr>
+
+<ng-template #noMovies>
+  <h2>Sin resultados</h2>
+</ng-template>
+
+<div class="row" *ngIf="movies.length > 0; else noMovies">
+  <div
+    class="col-12 col-md-6 col-lg-4 mb-4"
+    *ngFor="let movie of movies">
+
+    <movies-card-movie
+      [InputCardMovies]="movie">
+    </movies-card-movie>
+
+  </div>
+</div>

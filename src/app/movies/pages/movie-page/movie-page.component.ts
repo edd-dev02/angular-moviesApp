@@ -27,16 +27,12 @@ export class MoviePageComponent implements OnInit {
       )
       .subscribe( movie => {
         if(!movie) {
-          console.log("No hay pelicula");
           return this.rotuer.navigateByUrl("");
         }
 
-        console.log("Tenemos pelicula");
         return this.movie = movie;
       })
 
   }
-
-
 
 }
